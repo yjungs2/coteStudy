@@ -1,0 +1,20 @@
+# 컴파일 결과물
+*.class
+
+# 실행 파일
+*.exe
+*.jar
+
+# IDE 설정
+.vscode/
+.idea/
+*.iml
+
+# OS 잡파일
+.DS_Store
+Thumbs.db
+
+# 빌드 폴더
+bin/
+out/
+target/
