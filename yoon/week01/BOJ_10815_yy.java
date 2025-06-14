@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 
 
-public class BOJ_2417_yy {
+public class BOJ_10815_yy {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
