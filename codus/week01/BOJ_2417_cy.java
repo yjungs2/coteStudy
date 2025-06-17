@@ -1,5 +1,5 @@
 package codus.week01;
 
-public class BOJ_2417 {
+public class BOJ_2417_cy {
     
 }
