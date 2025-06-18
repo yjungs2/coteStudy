@@ -19,7 +19,8 @@ public class BOJ_2417_yy {
         while(left <= right)
         {
             mid = (left+right) / 2;
-            if(mid * mid >= N) {
+            
+            if(Math.pow(mid,2)>=N) {
                 answer = mid;
                 right = mid - 1;
             } else {
@@ -31,4 +32,10 @@ public class BOJ_2417_yy {
         bw.close();
 
     }
+    /*
+    private static boolean isCorrect(long mid, long N){
+        long result = N / mid;
+        return (result <= mid && mid >= 0);
+    }
+    */
 }
