@@ -26,7 +26,6 @@ public class BOJ_21942_cy {
             String date = day+" "+time;
             Map<String, String> borrow = new HashMap<>();
             borrow.put(bName, date);
-            userInfo.put(userId, );
 
         }
     }
