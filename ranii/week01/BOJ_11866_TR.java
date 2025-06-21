@@ -2,67 +2,36 @@ package ranii.week01;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class BOJ_11866_TR {
-   public static void main(String[] args) throws Exception{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
+    public static void main(String[] args) throws Exception{
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st=new StringTokenizer(br.readLine());
         StringBuilder sb= new StringBuilder();
-        Deque<Integer> dq= new LinkedList<>();
-        int N = Integer.parseInt(br.readLine());
-        for(int i=0;i<N;i++){
-            StringTokenizer st=new StringTokenizer(br.readLine());
-            String text=st.nextToken();
-            switch (text) {
-                case "push_back":
-                    dq.addLast(Integer.parseInt(st.nextToken()));
-                    break;
-                case "push_front":
-                    dq.addFirst(Integer.parseInt(st.nextToken()));
-                    break;
-                case "front":
-                    if(!dq.isEmpty()){
-                        sb.append(dq.peekFirst()+"\n");
-                    }else{
-                        sb.append("-1\n");
-                    }
-                    break;
-                case "back":
-                    if(!dq.isEmpty()){
-                        sb.append(dq.peekLast()+"\n");
-                    }else{
-                        sb.append("-1\n");
-                    }
-                    break;
-                case "pop_front":
-                    if(!dq.isEmpty()){
-                        sb.append(dq.removeFirst()+"\n");
-                    }else{
-                        sb.append("-1\n");
-                    }
-                    break;
-                case "pop_back":
-                    if(!dq.isEmpty()){
-                        sb.append(dq.removeLast()+"\n");
-                    }else{
-                        sb.append("-1\n");
-                    }
-                    break;
-                case "size":
-                    sb.append(dq.size()+"\n");
-                    break;
-                case "empty":
-                    if(dq.isEmpty()){
-                        sb.append("1\n");
-                    }else{
-                        sb.append("0\n");
-                    }
-                    break;
+        Queue<Integer> q=new LinkedList<>();
+        int N=Integer.parseInt(st.nextToken());
+        int K=Integer.parseInt(st.nextToken());
+        //K번 꺼내고 K-1까지 다시 넣어 
+        sb.append("<");
+        for(int i=1;i<N+1;i++){
+            //N번 반복 해서 큐에 값 저장 
+            q.offer(i);
+        }
+        while(!q.isEmpty()){
+            for(int i=0;i<K-1;i++){
+                q.offer(q.remove());
+            }
+            int num=q.remove();
+            sb.append(num);
+            if(q.isEmpty()){
+                sb.append(">");
+            }else{
+                sb.append(", ");
             }
         }
-        System.out.println(sb.toString());
-   }
+        System.out.println(sb);
+    }
 }
