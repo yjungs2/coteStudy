@@ -21,6 +21,7 @@ public class BOJ_1874_yy  {
                 ArrayList<Character> operations = new ArrayList<>();
                 boolean possible = true;
                 int current = 1;
+                // '4 3 6 8 7 5 2 1'
                 for(int num:arr){
                         while (current <= num){
                                 stack.add(current);
