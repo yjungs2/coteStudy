@@ -24,10 +24,10 @@ public class BOJ_1874_yy  {
                 // '4 3 6 8 7 5 2 1'
                 for(int num:arr){
                         while (current <= num){
-                                stack.add(current);
+                                stack.add(current); // 1 2 3 4 | 5 6 | 7 8 
                                 operations.add('+');
-                                current+=1;
-                        }
+                                current+=1;         // 2 3 4 5 | 6 7 | 8 9(current <= num)
+                        } 
                         if(stack.get(stack.size() - 1) == num){
                                 stack.remove(stack.size()-1);
                                 operations.add('-');
