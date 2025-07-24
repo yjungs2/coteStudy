@@ -3,7 +3,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class BOJ_10026_cy{
-
    static int N;
    static char[][] chars;
    static boolean[][] v;
